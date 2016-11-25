@@ -1,7 +1,5 @@
 package exercise;
 
-import java.util.Arrays;
-
 public class LargeNumAddition {
 
     private static String solution(String line) {
@@ -42,9 +40,9 @@ public class LargeNumAddition {
         else {
             char[] lastArr;  // 数组的剩余部分
             if(index1 == -1) {
-                lastArr = Arrays.copyOfRange(num2, 0, index2+1);
+                lastArr = copyOfRange(num2, 0, index2);
             }else{
-                lastArr = Arrays.copyOfRange(num1, 0, index1+1);
+                lastArr = copyOfRange(num1, 0, index1);
             }
 
             for (int i = lastArr.length-1; i >= 0; i--) {
@@ -69,6 +67,16 @@ public class LargeNumAddition {
             builder.append(String.valueOf(result[i]));
         }
         return builder.toString();
+    }
+
+    // 获取部分数组,包含from,包含to： [from, to]
+    private static char[] copyOfRange(char[] array, int from, int to) {
+        char[] range = new char[to - from + 1];
+        int index = 0;
+        for(int i=from; i<=to; i++) {
+            range[index++] = array[from];
+        }
+        return range;
     }
 
     public static void main(String[] args) {
