@@ -23,11 +23,11 @@ public class LargeNumSubtraction {
         int index1, index2;
         for(index1=num1.length-1, index2=num2.length-1; index1>=0 && index2>=0; index1--, index2--) {
             int tempResult;
-            if(Integer.parseInt(String.valueOf(num1[index1])) - temp >= Integer.parseInt(String.valueOf(num2[index2]))) {
+            if(Character.getNumericValue(num1[index1]) - temp >= Character.getNumericValue(num2[index2])) {
                 tempResult = num1[index1] - temp - num2[index2];
                 temp = 0;
             } else {
-                tempResult = Integer.parseInt(String.valueOf(num1[index1])) - temp - Integer.parseInt(String.valueOf(num2[index2])) + 10;
+                tempResult = Character.getNumericValue(num1[index1]) - temp - Character.getNumericValue(num2[index2]) + 10;
                 temp = 1;
             }
             num[index--] = tempResult;
@@ -35,7 +35,7 @@ public class LargeNumSubtraction {
 
         // 大数剩余的元素拼接到结果数组前面
         while(index1 >= 0) {
-            num[index--] = Integer.parseInt(String.valueOf(num1[index1])) - temp;
+            num[index--] = Character.getNumericValue(num1[index1]) - temp;
             temp = 0;   // 最多只需要减1次
             index1--;
         }
