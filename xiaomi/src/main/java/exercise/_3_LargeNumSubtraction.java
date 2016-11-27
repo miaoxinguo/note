@@ -3,7 +3,7 @@ package exercise;
 /**
  * 两个长度超出常规整形变量上限的大数相减
  */
-public class LargeNumSubtraction {
+public class _3_LargeNumSubtraction {
 
     private static String solution(String line) {
         String[] arr = line.split("-");

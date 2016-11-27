@@ -3,7 +3,7 @@ package game;
 /**
  * 计算有几个等差数列
  */
-public class Game_2_2_ArithmeticSequence {
+public class _2_2_ArithmeticSequence {
 
     private static String solution(String line) {
         String[] arr = line.split(" ");

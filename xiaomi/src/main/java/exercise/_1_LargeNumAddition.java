@@ -1,6 +1,6 @@
 package exercise;
 
-public class LargeNumAddition {
+public class _1_LargeNumAddition {
 
     private static String solution(String line) {
         String[] arr = line.split(" ");
