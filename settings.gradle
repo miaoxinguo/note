@@ -1,3 +1,4 @@
 rootProject.name = 'note'
 include 'xiaomi'
+include 'design_pattern'
 
