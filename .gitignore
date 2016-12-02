@@ -1,5 +1,5 @@
 ## gradle
-/.gradle
+.gradle
 build
 
 ## idea
@@ -8,10 +8,10 @@ out
 *.iml
 
 ## eclipse
-/bin/
-/.settings
+bin/
+.settings
 .classpath
 .project
 
 ## mac
-/.DS_Store
+.DS_Store
