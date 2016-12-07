@@ -3,7 +3,7 @@ package game;
 /**
  *
  */
-public class _3_2_Temp {
+public class _3_2_TheMaxNum {
 
     private static String solution(String line) {
         String[] tempArr = line.split(" ");
@@ -40,7 +40,10 @@ public class _3_2_Temp {
                 indexA++;
             }
         }
-        
+
+        for (int i : arr) {
+            System.out.println(i + " ");
+        }
         // 从 arr 中选出最大的 k 位数
         StringBuilder builder = new StringBuilder(k);
         int startIndex = 0;

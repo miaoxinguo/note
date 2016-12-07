@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 
 /**
  * 计费场景类，业务方法使用该类
+ *
+ * 为什么不是直接调用策略类而是将策略类交给Context类来启动呢？ 为了更灵活的增加一些逻辑
  */
 public class Context {
 
