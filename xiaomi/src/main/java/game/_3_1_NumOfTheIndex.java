@@ -39,44 +39,25 @@ package game;
 public class _3_1_NumOfTheIndex {
 
     private static String solution(String line) {
-        int n = Integer.parseInt(line);
+        long n = Long.parseLong(line);
 
-        // 字符串长度 1 2 3 4 5 …… n 是一个数列，根据输入的位数判断 所在字符串的长度
-        int size = 1;
-        int sumSize = 1;
-        while(sumSize < n) {
-            size++;
-            sumSize += size;
+        // 字符串长度 1 2 3 4 5 …… n 是一个数列，根据输入的位数判断n所在字符串之前串 拼接的长度
+        long sumSize = 0;    // 总长度
+        long nextSize = 1;   // 下一个串的长度
+        while(sumSize + nextSize < n) {
+            sumSize += nextSize;
+            nextSize++;
         }
-
-        int lastIndex = sumSize - n;   // 所在字符串的位置, 从后面数的索引
 
         // 1234567898765432 1234567898765432 123……  每16位一个循环
         String template = "1234567898765432";
-
-        char c;
-        if(size <= 16) {
-            c = template.substring(0, size).toCharArray()[size - lastIndex - 1];
-        }
-        else {
-            int tailCount = size % 16;   // 有几个多余的数
-            if(lastIndex < tailCount - 1) {
-                c = template.toCharArray()[size - lastIndex - 1];
-            }
-            else {
-                // 去掉尾巴 1234567898765432 1234567898765432……  纯循环
-                int newLastIndex = (lastIndex - (tailCount - 1)) % 16;
-                c = template.toCharArray()[16 - 1 - newLastIndex];
-            }
-        }
-
+        long index = n - sumSize - 1;
+        char c = template.charAt((int)(index % 16));
         return String.valueOf(c);
     }
 
     public static void main(String[] args) {
         System.out.println(solution("1"));
-        System.out.println(solution("2"));
-        System.out.println(solution("4"));
         System.out.println(solution("6"));
         System.out.println(solution("7"));
     }
