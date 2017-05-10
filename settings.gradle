@@ -1,4 +1,5 @@
 rootProject.name = 'note'
 include 'xiaomi'
-include 'design_pattern'
+include 'design-pattern'
+include 'gist'
 
