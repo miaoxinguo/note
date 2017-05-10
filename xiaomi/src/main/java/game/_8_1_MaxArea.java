@@ -18,12 +18,13 @@ public class _8_1_MaxArea {
     private static int getArea(int[] arr) {
         int count = arr.length;
         int min = Integer.MAX_VALUE;
-        java.util.ArrayList<Integer> minIndexList = new ArrayList<>();
         for (int anArr : arr) {
             if (anArr < min) {
                 min = anArr;
             }
         }
+
+        java.util.ArrayList<Integer> minIndexList = new ArrayList<>();
         for (int i = 0; i < arr.length; i++) {
             if (min == arr[i]) {
                 minIndexList.add(i);
@@ -37,7 +38,7 @@ public class _8_1_MaxArea {
         for (Integer index : minIndexList) {
             areaList.add(getArea(java.util.Arrays.copyOfRange(arr, 0, index)));
             if (index < arr.length -1) {
-                areaList.add(getArea(java.util.Arrays.copyOfRange(arr, index + 1, arr.length - 1)));
+                areaList.add(getArea(java.util.Arrays.copyOfRange(arr, index + 1, arr.length)));
             }
         }
 
