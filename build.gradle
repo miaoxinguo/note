@@ -9,13 +9,29 @@ allprojects {
         jcenter()
     }
 
+    // 定义版本号
+    ext {
+        slf4jVersion = '1.7.22'
+        logbackVersion = '1.2.1'
+        junitVersion = '4.12'
+    }
+
+
     dependencies {
-        compile 'org.slf4j:slf4j-api:1.7.21'
-        compile 'org.apache.commons:commons-lang3:3.5'
-        compile 'org.apache.commons:commons-collections4:4.2'
+        compile group: 'org.slf4j', name: 'slf4j-api', version: "${slf4jVersion}"
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.8.6'
+        compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.5'
+        compile group: 'org.apache.commons', name: 'commons-collections4', version: '4.2'
+        compile group: 'commons-codec', name: 'commons-codec', version: '1.11'
+
+        compile group: 'org.apache.httpcomponents', name: 'httpasyncclient', version: '4.1.2'
+        compile group: 'org.apache.httpcomponents', name: 'fluent-hc', version: '4.5.6'
         compile 'com.google.guava:guava:26.0-jre'
 
-        testCompile 'junit:junit:4.12'
+        runtime group: 'ch.qos.logback', name: 'logback-core', version: "${logbackVersion}"
+        runtime group: 'ch.qos.logback', name: 'logback-classic', version: "${logbackVersion}"
+
+        testCompile group: 'junit', name: 'junit', version: "${junitVersion}"
     }
 }
 
