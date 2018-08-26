@@ -1,5 +1,9 @@
 allprojects {
     apply plugin: 'java'
+    apply plugin: 'idea'
+
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
 
     repositories {
         jcenter()
@@ -8,6 +12,8 @@ allprojects {
     dependencies {
         compile 'org.slf4j:slf4j-api:1.7.21'
         compile 'org.apache.commons:commons-lang3:3.5'
+        compile 'org.apache.commons:commons-collections4:4.2'
+        compile 'com.google.guava:guava:26.0-jre'
 
         testCompile 'junit:junit:4.12'
     }
