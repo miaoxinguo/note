@@ -1,6 +1,5 @@
 package io.github.miaoxinguo.common.util;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -18,7 +17,7 @@ public class TestJsonUtils {
     private static final Logger logger = LoggerFactory.getLogger(TestJsonUtils.class);
 
     @Test
-    public void testParseArray() throws IOException {
+    public void testParseArray() {
         List<String> list = new ArrayList<>();
         list.add("123");
         list.add("abc");
@@ -29,7 +28,7 @@ public class TestJsonUtils {
     }
 
     @Test
-    public void testParseMap() throws IOException {
+    public void testParseMap() {
         Map<Integer, String> map = new HashMap<>();
         map.put(1, "aa");
         map.put(2, "bb");
